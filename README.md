@@ -9,10 +9,7 @@ My basic setup for Fedora
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 ## Install apps from Flathub
-* flatpak install flathub org.telegram.desktop com.bitwarden.desktop com.jetbrains.IntelliJ-IDEA-Community
-* flatpak install flathub org.videolan.VLC
-* flatpak install flathub org.gnome.gitg
-* flatpak install flathub org.remmina.Remmina
+flatpak install flathub org.telegram.desktop com.bitwarden.desktop com.jetbrains.IntelliJ-IDEA-Community org.videolan.VLC org.gnome.gitg org.remmina.Remmina
 
 ## Install Multimedia codec package
 sudo dnf groupupdate Multimedia
@@ -20,7 +17,6 @@ sudo dnf groupupdate Multimedia
 ## Install VS Code
 * sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 * sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-
 * sudo dnf update
 * sudo dnf install code
 
