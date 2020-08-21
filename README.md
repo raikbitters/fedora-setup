@@ -5,22 +5,22 @@ My basic setup for Fedora
 * sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 * sudo dnf update
 
-## Add Flathub to Gnome software
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-## Install apps from Flathub (Telegram, Bitwarden, Remmina)
-flatpak install flathub org.telegram.desktop com.bitwarden.desktop org.videolan.VLC org.remmina.Remmina
-
 ## Install Multimedia codec package
 sudo dnf groupupdate Multimedia
-
-## Install Chrome
-sudo dnf install chrome
 
 ## Install Gnome tweaks
 sudo dnf install gnome-tweaks
 
-## Install Games launchers
+## Add Flathub to Gnome software
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+## Install apps from Flathub (Telegram, Bitwarden, VLC, Remmina)
+flatpak install flathub org.telegram.desktop com.bitwarden.desktop org.videolan.VLC org.remmina.Remmina
+
+## Install Chrome
+sudo dnf install chrome
+
+## Install games launchers
 sudo dnf install steam
 sudo dnf install lutris
 
@@ -39,6 +39,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 * sudo dnf update
 * sudo dnf install code
 
-### Install IntelliJ-IDEA and Gitg from Flathub
+### Install IntelliJ IDEA and Gitg from Flathub
 flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community org.gnome.gitg
 
