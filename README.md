@@ -1,5 +1,5 @@
 # Fedora basic setup
-My basic setup for fedora
+My basic setup for Fedora
 
 ## Enable RPM Fusion Free
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
