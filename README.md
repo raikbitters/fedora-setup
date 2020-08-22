@@ -50,4 +50,5 @@ flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community org.gnome.gitg
 * sudo dnf install google-roboto-fonts
 * sudo dnf install google-roboto-mono-fonts
 * sudo dnf install google-roboto-slab-fonts
+* sudo dnf install fontawesome-fonts
 
