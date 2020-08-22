@@ -34,6 +34,7 @@ sudo dnf install lutris
 * sudo dnf install google-roboto-fonts
 * sudo dnf install google-roboto-mono-fonts
 * sudo dnf install google-roboto-slab-fonts
+* git clone --depth=1 https://github.com/ryanoasis/nerd-fonts ~/Downloads/nerd-fonts
 
 ### Install zsh
 * sudo dnf install zsh
