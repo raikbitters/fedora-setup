@@ -29,11 +29,11 @@ sudo dnf install lutris
 ### Install fonts
 * sudo dnf install powerline-fonts
 * sudo dnf install fira-code-fonts
+* sudo dnf install fontawesome-fonts
 * sudo dnf install google-roboto-condensed-fonts
 * sudo dnf install google-roboto-fonts
 * sudo dnf install google-roboto-mono-fonts
 * sudo dnf install google-roboto-slab-fonts
-* sudo dnf install fontawesome-fonts
 
 ### Install zsh
 * sudo dnf install zsh
