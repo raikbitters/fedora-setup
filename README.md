@@ -29,6 +29,7 @@ sudo dnf install lutris
 ### Install zsh
 * sudo dnf install zsh
 * chsh -s $(which zsh)
+* sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ### Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -41,4 +42,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ### Install IntelliJ IDEA and Gitg from Flathub
 flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community org.gnome.gitg
+
+### Install fonts
+* sudo dnf install powerline-fonts
+* sudo dnf install fira-code-fonts
+* sudo dnf install google-roboto-condensed-fonts
+* sudo dnf install google-roboto-fonts
+* sudo dnf install google-roboto-mono-fonts
+* sudo dnf install google-roboto-slab-fonts
 
