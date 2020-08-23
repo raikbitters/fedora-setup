@@ -34,13 +34,11 @@ sudo dnf install lutris
 * sudo dnf install google-roboto-fonts
 * sudo dnf install google-roboto-mono-fonts
 * sudo dnf install google-roboto-slab-fonts
-* git clone --depth=1 https://github.com/ryanoasis/nerd-fonts ~/Downloads/nerd-fonts
 
 ### Install zsh
 * sudo dnf install zsh
 * chsh -s $(which zsh)
 * sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-* git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 ### Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
