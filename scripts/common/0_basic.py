@@ -14,3 +14,6 @@ os.system("sudo dnf install -y gnome-tweaks")
 
 # Add Flathub to Gnome software
 os.system("flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo")
+
+# Install extensions
+os.system("sudo dnf install -y gnome-shell-extension-dash-to-dock gnome-shell-extension-user-theme gnome-shell-extension-topicons-plus gnome-shell-extension-gsconnect")
