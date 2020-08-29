@@ -1,0 +1,6 @@
+<svg height='16' width='16' xmlns='http://www.w3.org/2000/svg'>
+    <g transform='translate(-1293 327)'>
+        <path d='M1295-326c-1.108 0-2 .892-2 2v8c0 1.108.892 2 2 2h1.522l2.478 3 2-3h6c1.108 0 2-.892 2-2v-8c0-1.108-.892-2-2-2zm0 1h12c.554 0 1 .446 1 1v8c0 .554-.446 1-1 1h-6.433l-1.567 2.4-1.967-2.4H1295c-.554 0-1-.446-1-1v-8c0-.554.446-1 1-1zm6 1c-2.203 0-4 1.797-4 4 0 2.203 1.797 4 4 4 2.203 0 4-1.797 4-4 0-2.203-1.797-4-4-4zm-2.5 3h5c.277 0 .5.223.5.5v1c0 .277-.223.5-.5.5h-5a.499.499 0 01-.5-.5v-1c0-.277.223-.5.5-.5zm-4.199 7c.152.017.32.021.523 0z' fill='gray' font-family='Ubuntu' font-size='15' font-weight='400' letter-spacing='0' style='line-height:125%;-inkscape-font-specification:Ubuntu;text-align:center' text-anchor='middle' word-spacing='0'/>
+        
+    </g>
+</svg>

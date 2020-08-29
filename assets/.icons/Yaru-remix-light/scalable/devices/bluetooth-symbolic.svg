@@ -1,0 +1,6 @@
+<svg height='16' width='16' xmlns='http://www.w3.org/2000/svg'>
+    <g color='#000' transform='translate(-652 -60)'>
+        <path d='M657.662 60c-.839.01-1.451-.02-1.953.258-.251.138-.45.371-.56.664-.11.292-.149.64-.149 1.078v12c0 .438.039.786.148 1.078.11.293.31.528.561.666.502.277 1.114.246 1.953.256H663.338c.839-.01 1.451.021 1.953-.256.251-.138.45-.373.56-.666.11-.292.149-.64.149-1.078V62c0-.438-.039-.786-.148-1.078a1.253 1.253 0 00-.561-.664c-.502-.277-1.114-.248-1.953-.258H657.664zM660 61.303l4.24 4.238-2.94 2.469 2.94 2.469-4.24 4.238v-5.613l-2.428 2.039-.644-.766 2.818-2.367-2.818-2.367.644-.766L660 66.916zm1 2.414v3.24l1.76-1.48zm0 5.346v3.24l1.76-1.76z' fill='gray' font-family='sans-serif' font-weight='400' overflow='visible' style='line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;white-space:normal;shape-padding:0;isolation:auto;mix-blend-mode:normal;solid-color:#000;solid-opacity:1;marker:none'/>
+        
+    </g>
+</svg>

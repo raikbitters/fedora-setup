@@ -1,0 +1,7 @@
+<svg height='16' width='16' xmlns='http://www.w3.org/2000/svg'>
+    <g color='#000' transform='translate(-592 -100)'>
+        <path d='M596 103c-.658 0-1.179.06-1.617.225a1.88 1.88 0 00-.998.838c-.416.752-.37 1.673-.385 2.931v2.012c.015 1.258-.03 2.179.385 2.932.207.376.56.673.998.838.438.164.96.224 1.617.224h6c.658 0 1.179-.06 1.617-.225a1.88 1.88 0 00.998-.838c.416-.752.37-1.673.385-2.931v-2.012c-.015-1.258.03-2.179-.385-2.932a1.88 1.88 0 00-.998-.838c-.438-.164-.96-.224-1.617-.224zm0 1h6c.592 0 1.006.063 1.266.16.26.098.371.202.472.385.202.366.247 1.196.262 2.455v1.994c-.015 1.264-.06 2.092-.262 2.46-.1.183-.212.288-.472.386-.26.097-.674.16-1.266.16h-6c-.592 0-1.006-.063-1.266-.16-.26-.098-.371-.203-.472-.387-.202-.366-.247-1.194-.262-2.453v-2c.015-1.259.06-2.09.262-2.455.1-.183.212-.287.472-.385.26-.097.674-.16 1.266-.16z' fill='gray' font-family='sans-serif' font-weight='400' overflow='visible' style='line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;isolation:auto;mix-blend-mode:normal;solid-color:#000;solid-opacity:1;marker:none'/>
+        
+        <path d='M608 104.719c-1.018.482-2.43 1.254-4 2.146v2.272c1.553.884 2.962 1.653 4 2.144z' fill='gray' overflow='visible' style='marker:none'/>
+    </g>
+</svg>
