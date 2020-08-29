@@ -2,8 +2,6 @@
 
 import os
 
-#themesPath = "$HOME/.themes"
-#iconsPath = "$HOME/.icons"
 assetsThemesPath = "./assets/.themes"
 assetsIconsPath = "./assets/.icons"
 
