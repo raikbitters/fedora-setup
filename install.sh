@@ -59,7 +59,7 @@ case $option in
         echoDone
         ;;
     2)
-        #commonInstall
+        commonInstall
         gamesInstall
         echoDone
         ;;
