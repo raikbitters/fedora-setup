@@ -2,8 +2,8 @@
 
 import os
 
-# Flathub apps (Telegram, Bitwarden, VLC, Remmina)
-os.system("flatpak install -y flathub org.telegram.desktop com.bitwarden.desktop org.videolan.VLC org.remmina.Remmina")
+# Flathub apps (Telegram, Bitwarden, VLC, Remmina, Spotify)
+os.system("flatpak install -y flathub org.telegram.desktop com.bitwarden.desktop org.videolan.VLC org.remmina.Remmina com.spotify.Client")
 
 # Chrome
 os.system("sudo dnf config-manager --set-enabled google-chrome")

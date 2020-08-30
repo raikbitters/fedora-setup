@@ -25,6 +25,6 @@ os.system("sudo dnf install -y code")
 
 # Zsh
 os.system("sudo dnf install -y zsh")
-os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
 os.system("sudo dnf install -y util-linux-user")
 os.system("chsh -s $(which zsh)")
+os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
