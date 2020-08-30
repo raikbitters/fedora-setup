@@ -35,12 +35,12 @@ echoDone() {
     echo -e "\n${bold}Done!${normal}"
 }
 
-echo "Hello $user! It's basic Fedora setup."
+echo -e "\nHello $user! It's basic Fedora setup."
 
 while :
 do
 echo "
-    Select install option:
+    Pleas select install option:
     [1] Common applications.
     [2] Common and games applications.
     [3] Common and develop applications.
