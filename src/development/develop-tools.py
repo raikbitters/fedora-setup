@@ -3,11 +3,18 @@
 import os
 import subprocess
 
+# Zsh
+os.system("sudo dnf install -y zsh")
+os.system("sudo dnf install -y util-linux-user")
+os.system("chsh -s $(which zsh)")
+os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
+
 # Fonts
 os.system("sudo dnf install -y powerline-fonts fira-code-fonts fontawesome-fonts google-roboto-condensed-fonts google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts")
 
 # Rust
 os.system("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
+os.system("export PATH="$HOME/.cargo/bin:$PATH"")
 
 # IntelliJ IDEA and Gitg from Flathub
 os.system("flatpak install -y flathub com.jetbrains.IntelliJ-IDEA-Community org.gnome.gitg")
@@ -22,9 +29,3 @@ os.system("sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc")
 os.system('echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo')
 os.system("sudo dnf update -y")
 os.system("sudo dnf install -y code")
-
-# Zsh
-os.system("sudo dnf install -y zsh")
-os.system("sudo dnf install -y util-linux-user")
-os.system("chsh -s $(which zsh)")
-os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
