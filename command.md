@@ -98,7 +98,6 @@
 
 `sudo dnf install code`
 
-
 ### IntelliJ IDEA and Gitg from Flathub
 
 `flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community org.gnome.gitg`
