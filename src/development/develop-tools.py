@@ -14,7 +14,7 @@ os.system("sudo dnf install -y powerline-fonts fira-code-fonts fontawesome-fonts
 
 # Rust
 os.system("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
-os.system("export PATH="$HOME/.cargo/bin:$PATH"")
+os.system('export PATH="$HOME/.cargo/bin:$PATH"')
 
 # IntelliJ IDEA and Gitg from Flathub
 os.system("flatpak install -y flathub com.jetbrains.IntelliJ-IDEA-Community org.gnome.gitg")
