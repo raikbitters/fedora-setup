@@ -1,4 +1,4 @@
-# Pure command for manual install
+# Commands for manual install
 
 ## Basic setup
 
