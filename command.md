@@ -111,3 +111,4 @@
 ### Virtual Machine Manager
 
 `sudo dnf install @virtualization`
+`sudo usermod -a -G libvirt $(whoami)`
