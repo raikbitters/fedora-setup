@@ -110,4 +110,4 @@
 
 ### Virtual Machine Manager
 
-`sudo dnf install virt-manager libvirt`
+`sudo dnf install @virtualization`

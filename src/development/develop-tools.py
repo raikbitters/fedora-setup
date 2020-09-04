@@ -30,5 +30,5 @@ os.system('echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.mi
 os.system("sudo dnf update -y")
 os.system("sudo dnf install -y code")
 
-#  Virtual Machine Manager
-os.system("sudo dnf install -y virt-manager libvirt")
+#  Virtual Machine Manager\
+os.system("sudo dnf install -y @virtualization")

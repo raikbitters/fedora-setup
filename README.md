@@ -44,7 +44,7 @@ Script for setup Fedora
 * Gitg
 * Node.js
 * Yarn
-* Virtual Machine Manager
+* Virtualization tools
 
 ## VS Code plugins
 
