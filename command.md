@@ -111,4 +111,13 @@
 ### Virtual Machine Manager
 
 `sudo dnf install @virtualization`
+
 `sudo usermod -a -G libvirt $(whoami)`
+
+If you want to enable a regular user for system administration:
+
+```
+sudo vi /etc/libvirt/libvirtd.conf
+unix_sock_group = "libvirt"
+unix_sock_rw_perms = "0770"
+```
