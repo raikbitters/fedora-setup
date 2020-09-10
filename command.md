@@ -84,9 +84,15 @@
 
 `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
+### Set JAVA_HOME
+
+`export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")`
+`PATH=$JAVA_HOME/bin:$PATH`
+
 ### Rust
 
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+`export PATH="$HOME/.cargo/bin:$PATH"`
 
 ### VS Code
 

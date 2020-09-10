@@ -12,6 +12,10 @@ os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/too
 # Fonts
 os.system("sudo dnf install -y powerline-fonts fira-code-fonts fontawesome-fonts google-roboto-condensed-fonts google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts")
 
+# Set JAVA_HOME
+os.system('export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")')
+os.system('export PATH=$JAVA_HOME/bin:$PATH')
+
 # Rust
 os.system("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
 os.system('export PATH="$HOME/.cargo/bin:$PATH"')
