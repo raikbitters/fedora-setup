@@ -5,9 +5,9 @@ import subprocess
 
 # Zsh
 os.system("sudo dnf install -y zsh")
+os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended')
 os.system("sudo dnf install -y util-linux-user")
 os.system("chsh -s $(which zsh)")
-os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
 
 # Fonts
 os.system("sudo dnf install -y powerline-fonts fira-code-fonts fontawesome-fonts google-roboto-condensed-fonts google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts")
