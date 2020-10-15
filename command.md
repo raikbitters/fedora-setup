@@ -114,6 +114,9 @@
 
 `sudo dnf install yarn`
 
+### Graph Visualization Software
+`sudo dnf install graphviz`
+
 ### Virtual Machine Manager
 
 `sudo dnf install @virtualization`
