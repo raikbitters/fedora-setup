@@ -1,7 +1,0 @@
-<svg height='16' width='16' xmlns='http://www.w3.org/2000/svg'>
-    <g transform='translate(-1273 307)'>
-        <path d='M1275-306c-1.108 0-2 .892-2 2v8c0 1.108.892 2 2 2h1.522l2.478 3 2-3h6c1.108 0 2-.892 2-2v-8c0-1.108-.892-2-2-2zm0 1h12c.554 0 1 .446 1 1v8c0 .554-.446 1-1 1h-6.434l-1.566 2.4-1.966-2.4H1275c-.554 0-1-.446-1-1v-8c0-.554.446-1 1-1zm-.699 11c.152.017.32.021.523 0z' fill='gray' font-family='Ubuntu' font-size='15' font-weight='400' letter-spacing='0' opacity='.5' style='line-height:125%;-inkscape-font-specification:Ubuntu;text-align:center' text-anchor='middle' word-spacing='0'/>
-        
-        <path color='#000' d='M1278-301a1 1 0 100 2 1 1 0 000-2zm3 0a1 1 0 100 2 1 1 0 000-2zm3 0a1 1 0 100 2 1 1 0 000-2z' fill='gray' font-family='sans-serif' font-weight='400' overflow='visible' style='line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;isolation:auto;mix-blend-mode:normal;solid-color:#000;solid-opacity:1;marker:none'/>
-    </g>
-</svg>
