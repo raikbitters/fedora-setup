@@ -21,3 +21,6 @@ os.system("sudo dnf install -y gnome-tweaks")
 
 # Install extensions
 os.system("sudo dnf install -y gnome-shell-extension-dash-to-dock gnome-shell-extension-user-theme gnome-shell-extension-topicons-plus gnome-shell-extension-gsconnect")
+
+# Fonts
+os.system("sudo dnf install -y google-roboto-condensed-fonts google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts")
