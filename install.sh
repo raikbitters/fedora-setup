@@ -6,9 +6,6 @@ option=""
 basicPath="./src/common/basic.py"
 appsPath="./src/common/apps.py"
 gamesPath="./src/common/games.py"
-themePath="./src/common/theme.py"
-developPath="./src/development/develop-tools.py"
-vscodePluginsPath="./src/development/vscode-plugins.py"
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -16,11 +13,6 @@ commonInstall() {
     echo "${bold}Common applications install...${normal}"
     python $basicPath
     python $appsPath
-}
-themeInstall() {
-    echo "${bold}Theme install...${normal}"
-    python $basicPath
-    python $themePath
 }
 gamesInstall() {
     echo "${bold}Games applications install...${normal}"
@@ -31,7 +23,7 @@ developInstall() {
     python $developPath
     python $vscodePluginsPath
 }
-echoDone() {
+printDone() {
     echo -e "\n${bold}Done!${normal}"
 }
 
@@ -56,27 +48,27 @@ case $option in
         ;;
     1)
         commonInstall
-        echoDone
+        printDone
         ;;
     2)
         commonInstall
         gamesInstall
-        echoDone
+        printDone
         ;;
     3)
         commonInstall
         developInstall
-        echoDone
+        printDone
         ;;
     4)  
         commonInstall
         gamesInstall
         developInstall
-        echoDone
+        printDone
         ;;
     5)
         themeInstall
-        echoDone
+        printDone
         ;;
     *)
         echo "Wrong option."
