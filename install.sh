@@ -3,25 +3,30 @@
 user=$USER
 option=""
 
-basicPath="./src/common/basic.py"
-appsPath="./src/common/apps.py"
-gamesPath="./src/common/games.py"
 bold=$(tput bold)
 normal=$(tput sgr0)
 
 commonInstall() {
     echo "${bold}Common applications install...${normal}"
-    python $basicPath
-    python $appsPath
+    python ./src/common/basic.py
+    python ./src/common/apps.py
 }
 gamesInstall() {
     echo "${bold}Games applications install...${normal}"
-    python $gamesPath
+    python ./src/common/games.py
 }
 developInstall() {
-    echo "${bold}Developper tools install...${normal}"
-    python $developPath
-    python $vscodePluginsPath
+    echo "${bold}Development Tools install...${normal}"
+    python ./src/development/develop-tools.py
+}
+zshInstall() {
+    echo "${bold}Zsh package install...${normal}"
+    python src/development/zsh-setup.py
+}
+
+idesInstall() {
+    echo "${bold}VS Code and Intellij IDEA install...${normal}"
+    python src/development/ides.py
 }
 printDone() {
     echo -e "\n${bold}Done!${normal}"
