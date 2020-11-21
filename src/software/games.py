@@ -1,6 +1,7 @@
 # Games app install
 
 import os
+os.system("sudo dnf update -y")
 
 # Games launchers
 os.system("sudo dnf install -y steam")

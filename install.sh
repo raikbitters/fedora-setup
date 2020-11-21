@@ -1,95 +1,123 @@
 #!/bin/bash
 
 user=$USER
-option=""
-
 bold=$(tput bold)
 normal=$(tput sgr0)
-basic_setup() {
-    echo "${bold}Basic setup...${normal}"
+
+function basic_setup {
+    echo -e "\n${bold}Basic setup...${normal}\n"
     python ./src/software/basic.py
 }
-common_install() {
-    echo "${bold}Common applications install...${normal}"
+function common_install {
+    echo -e "\n${bold}Common applications install...${normal}\n"
     python ./src/software/apps.py
 }
-games_install() {
-    echo "${bold}Games applications install...${normal}"
+function games_install {
+    echo -e "\n${bold}Games applications install...${normal}\n"
     python ./src/software/games.py
 }
-develop_tools_install() {
-    echo "${bold}Development Tools install...${normal}"
+function develop_tools_install {
+    echo -e "\n${bold}Development Tools install...${normal}\n"
     python ./src/development/develop-tools.py
 }
-zsh_install() {
-    echo "${bold}Zsh package install...${normal}"
+function zsh_install {
+    echo -e "\n${bold}Zsh package install...${normal}\n"
     python src/development/zsh-setup.py
 }
 
-ides_install() {
-    echo "${bold}VS Code and Intellij IDEA install...${normal}"
+function ides_install {
+    echo -e "\n${bold}VS Code and Intellij IDEA install...${normal}\n"
     python src/development/ides.py
 }
-print_done() {
+
+function print_done {
     echo -e "\n${bold}Done!${normal}"
 }
 
-echo -e "\nHello $user! It's basic Fedora setup."
+function developer_menu {
+    option=""
+    until [ "$option" = "0" ]; do
+
+    echo -e "\n${bold}Developer menu${normal}"
+    echo "
+    Installation options:
+
+    [1] Develop tools install
+    [2] Oh My Zsh install
+    [3] VS Code and IntelliJ IDEA install
+    [4] All developer apps install
+
+    Other options:
+    
+    [0] Return to Main menu
+    "
+    read -p "Select option: " option
+
+    case $option in
+        0)
+            break;;
+        1)
+            develop_tools_install
+            print_done;;
+        2)
+            zsh_install
+            print_done;;
+        3)
+            ides_install1
+            print_done;;
+        4)
+            develop_tools_install
+            ides_install
+            zsh_install
+            print_done;;
+        *)  
+            echo -e "\n${bold}Wrong option${normal}";;
+    esac
+    done
+}
+
+function main_menu {
+    option=""
+    until [ "$option" = "4" ]; do
+
+    echo -e "\n${bold}Main menu${normal}"
+    echo -e "
+    Installation options:
+    
+    [1] Common applications
+    [2] Games applications
+    [3] All applications
+
+    Other options:
+    
+    [4] Developer menu
+    [0] Exit
+    "
+    read -p "Select option: " option
+
+    case $option in
+        0)
+            exit;;
+        1)
+            common_install
+            print_done;;
+        2)
+            games_install
+            print_done;;
+        3)
+            common_install
+            games_install
+            print_done;;
+        4)
+            developer_menu;;
+        *)  
+            echo -e "\n${bold}Wrong option${normal}";;
+    esac
+    done
+}
+
+echo -e "\nHello $user! It's fast Fedora setup."
 
 #basic_setup
 
-while :
-do
-echo "
-If you want to install applications, select the installation option:
-
-    [1] Common applications.
-    [2] Games applications.
-    [3] Develop tools.
-    [4] Zsh.
-    [5] VS Code and IntelliJ IDEA.
-    [6] All applications.
-    [7] Develop apps menu.
-    [0] Exit.
-    "
-read -p "Select option: " option
-case $option in
-    *)
-        echo "Wrong option."
-        ;;
-    0)
-        break
-        ;;
-    1)
-        common_install
-        print_done
-        ;;
-    2)
-        games_install
-        print_done
-        ;;
-    3)  
-        develop_tools_install
-        print_done
-        ;;
-    4)
-        zsh_install
-        print_done
-        ;;
-    5)
-        ides_install
-        print_done
-        ;;
-    6)
-        common_install
-        games_install
-        develop_tools_install
-        zsh_install
-        ides_install
-        print_done
-        ;;
-    7)
-        print_done
-        ;;
-esac
-done
+main_menu

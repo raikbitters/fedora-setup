@@ -10,14 +10,17 @@ os.system('sudo dnf update -y')
 os.system('sudo dnf groupinstall -y "Development Tools"')
 
 # Set JAVA_HOME
+os.system('echo -e "\nSetting JAVA_HOME..."')
 os.system('export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")')
 os.system('export PATH=$JAVA_HOME/bin:$PATH')
 
 # Rust
+os.system('echo -e "\nStart download Rustup and install Rust..."')
 os.system("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
 os.system('export PATH="$HOME/.cargo/bin:$PATH"')
 
 # Yarn & nodejs
+os.system('echo -e "\nStart install yarn and node.js..."')
 os.system("curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo")
 os.system("sudo dnf update -y")
 os.system("sudo dnf install -y yarn")
