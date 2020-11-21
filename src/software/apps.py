@@ -2,6 +2,14 @@
 
 import os
 
+os.system("sudo dnf update -y")
+
+# Install Gnome tweaks
+os.system("sudo dnf install -y gnome-tweaks")
+
+# Install extensions
+os.system("sudo dnf install -y gnome-shell-extension-dash-to-dock gnome-shell-extension-user-theme gnome-shell-extension-topicons-plus gnome-shell-extension-gsconnect")
+
 # Flathub apps (Telegram, Bitwarden, VLC, Remmina, Spotify)
 os.system("flatpak install -y flathub org.telegram.desktop com.bitwarden.desktop com.spotify.Client")
 
