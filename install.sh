@@ -61,7 +61,7 @@ echo -e "\nHello $user! It's basic Fedora setup."
 
 while :
 do
-    echo "
+echo "
 If you want to install applications, select the installation option:
 
     [1] Common applications.
@@ -73,45 +73,44 @@ If you want to install applications, select the installation option:
     [7] Develop apps menu.
     [0] Exit.
     "
-    read -p "Select option: " option
-
-    case $option in
-        *)
-            echo "Wrong option."
-            ;;
-        0)
-            break
-            ;;
-        1)
-            common_install
-            print_done
-            ;;
-        2)
-            games_install
-            print_done
-            ;;
-        3)  
-            develop_tools_install
-            print_done
-            ;;
-        4)
-            zsh_install
-            print_done
-            ;;
-        5)
-            ides_install
-            print_done
-            ;;
-        6)
-            common_install
-            games_install
-            develop_tools_install
-            zsh_install
-            ides_install
-            print_done
-            ;;
-        7)
-            print_done
-            ;;
+read -p "Select option: " option
+case $option in
+    *)
+        echo "Wrong option."
+        ;;
+    0)
+        break
+        ;;
+    1)
+        common_install
+        print_done
+        ;;
+    2)
+        games_install
+        print_done
+        ;;
+    3)  
+        develop_tools_install
+        print_done
+        ;;
+    4)
+        zsh_install
+        print_done
+        ;;
+    5)
+        ides_install
+        print_done
+        ;;
+    6)
+        common_install
+        games_install
+        develop_tools_install
+        zsh_install
+        ides_install
+        print_done
+        ;;
+    7)
+        print_done
+        ;;
 esac
 done
