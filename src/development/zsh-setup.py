@@ -20,4 +20,4 @@ os.system("git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUST
 os.system("git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/k")
 
 # Update zsh.rc 
-os.system('echo "# Path to your oh-my-zsh installation.\nexport ZSH="/home/raikbitters/.oh-my-zsh"\n\n# Set name of the theme.\nZSH_THEME="agnoster"\n\n# Which plugins would you like to load?\nplugins=(git sudo zsh-syntax-highlighting zsh-autosuggestions k)\n\nsource $ZSH/oh-my-zsh.sh\n\n# User configuration." > ${HOME}/.zshrc')
+os.system('echo "# Path to your oh-my-zsh installation.\nexport ZSH="/home/raikbitters/.oh-my-zsh"\n\n# Set name of the theme.\nZSH_THEME="agnoster"\n\n# Which plugins would you like to load?\nplugins=(git sudo zsh-syntax-highlighting zsh-autosuggestions k)\n\nsource {$ZSH-~/.oh-my-zsh}/oh-my-zsh.sh\n\n# User configuration." > ${HOME}/.zshrc')
