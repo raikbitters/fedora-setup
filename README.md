@@ -1,6 +1,6 @@
-# Fedora basic setup
+# Fedora fast setup
 
-Script for setup Fedora
+Script for fast setup Fedora
 
 ## Basic setup
 

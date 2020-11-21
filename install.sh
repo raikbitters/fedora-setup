@@ -60,7 +60,7 @@ function developer_menu {
             zsh_install
             print_done;;
         3)
-            ides_install1
+            ides_install
             print_done;;
         4)
             develop_tools_install
