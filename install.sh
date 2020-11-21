@@ -24,16 +24,13 @@ function zsh_install {
     echo -e "\n${bold}Zsh package install...${normal}\n"
     python src/development/zsh-setup.py
 }
-
 function ides_install {
     echo -e "\n${bold}VS Code and Intellij IDEA install...${normal}\n"
     python src/development/ides.py
 }
-
 function print_done {
     echo -e "\n${bold}Done!${normal}"
 }
-
 function developer_menu {
     option=""
     until [ "$option" = "0" ]; do
@@ -75,7 +72,6 @@ function developer_menu {
     esac
     done
 }
-
 function main_menu {
     option=""
     until [ "$option" = "4" ]; do
@@ -118,6 +114,6 @@ function main_menu {
 
 echo -e "\nHello $user! It's fast Fedora setup."
 
-#basic_setup
+basic_setup
 
 main_menu

@@ -22,19 +22,19 @@
 
 `sudo dnf groupupdate Multimedia`
 
-### Gnome tweaks
-
-`sudo dnf install gnome-tweaks`
-
 ### Add Flathub to Gnome software
 
 `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 
 ## Common applications
 
+### Gnome tweaks
+
+`sudo dnf install gnome-tweaks`
+
 ### Apps from Flathub (Telegram, Bitwarden, VLC, Remmina)
 
-`flatpak install -y flathub org.telegram.desktop com.bitwarden.desktop org.videolan.VLC org.remmina.Remmina com.spotify.Client`
+`flatpak install flathub org.telegram.desktop com.bitwarden.desktop com.spotify.Client`
 
 ### Chrome
 
@@ -44,10 +44,6 @@
 
 `sudo dnf install chrome`
 
-### Zoom
-
-`sudo dnf install https://zoom.us/client/latest/zoom_x86_64.rpm`
-
 ## Games launchers
 
 `sudo dnf install steam`
@@ -55,6 +51,16 @@
 `sudo dnf install lutris`
 
 `flatpak install flathub com.discordapp.Discord`
+
+## Work
+
+### Zoom
+
+`sudo dnf install https://zoom.us/client/latest/zoom_x86_64.rpm`
+
+### Remmina
+
+`flatpak install org.remmina.Remmina`
 
 ## Developer tools
 
@@ -65,14 +71,6 @@
 `sudo dnf install fira-code-fonts`
 
 `sudo dnf install fontawesome-fonts`
-
-`sudo dnf install google-roboto-condensed-fonts`
-
-`sudo dnf install google-roboto-fonts`
-
-`sudo dnf install google-roboto-mono-fonts`
-
-`sudo dnf install google-roboto-slab-fonts`
 
 ### Zsh
 
@@ -130,3 +128,7 @@ sudo vi /etc/libvirt/libvirtd.conf
 unix_sock_group = "libvirt"
 unix_sock_rw_perms = "0770"
 ```
+
+### Visualization Software
+
+`sudo dnf install graphviz`

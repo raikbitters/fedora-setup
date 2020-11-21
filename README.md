@@ -4,21 +4,22 @@ Script for setup Fedora
 
 ## Basic setup
 
-* Enable RPM Fusion Free.
-* Enable RPM Fusion NonFree.
-* Install Multimedia codec package.
-* Install Gnome tweaks.
-* Enable Flathub in Gnome software app.
+* Enable RPM Fusion Free
+* Enable RPM Fusion NonFree
+* Install Multimedia codec package
+* Enable Flathub in Gnome software app
+* Install Roboto fonts.
 
 ## Common applications
 
+* Gnome tweaks
+* Gnome extension
 * Telegram
 * Bitwarde
-* VLC
-* Remmina
 * Chrome
-* Zoom
 * Spotify
+* Zoom
+* Remmina
 
 ## Applications for games
 
@@ -32,36 +33,12 @@ Script for setup Fedora
   * Powerline
   * Fira code
   * Fontawesome
-  * Roboto
-  * Roboto condensed
-  * Roboto mono
-  * Roboto slab
 * Zsh
 * Oh My Zsh
 * Rust
 * VS Code
 * IntelliJ IDEA
-* Gitg
 * Node.js
 * Yarn
 * Virtualization tools
-
-## VS Code plugins
-
-* 42Crunch.vscode-openapi
-* Arjun.swagger-viewer
-* bungcip.better-toml
-* DavidAnson.vscode-markdownlint
-* dbaeumer.vscode-eslint
-* Equinusocio.vsc-community-material-theme
-* Equinusocio.vsc-material-theme
-* equinusocio.vsc-material-theme-icons
-* ms-azuretools.vscode-docker
-* ms-python.python
-* redhat.vscode-yaml
-* rust-lang.rust
-* serayuzgur.crates
-* stoplight.spectral
-* streetsidesoftware.code-spell-checker
-* streetsidesoftware.code-spell-checker-russian
-* vadimcn.vscode-lldb
+* Visualization Software (graphviz)
