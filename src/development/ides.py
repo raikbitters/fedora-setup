@@ -33,5 +33,5 @@ os.system("code --install-extension yzhang.markdown-all-in-one")
 # Font for VS Code
 os.system("sudo dnf install -y fira-code-fonts")
 
-# IntelliJ IDEA and Gitg from Flathub
-os.system("flatpak install -y flathub com.jetbrains.IntelliJ-IDEA-Community org.gnome.gitg")
+# IntelliJ IDEA from Flathub
+os.system("flatpak install -y flathub com.jetbrains.IntelliJ-IDEA-Community")

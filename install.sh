@@ -5,78 +5,113 @@ option=""
 
 bold=$(tput bold)
 normal=$(tput sgr0)
-
-commonInstall() {
+basic_setup() {
+    echo "${bold}Basic setup...${normal}"
+    python ./src/software/basic.py
+}
+common_install() {
     echo "${bold}Common applications install...${normal}"
-    python ./src/common/basic.py
-    python ./src/common/apps.py
+    python ./src/software/apps.py
 }
-gamesInstall() {
+games_install() {
     echo "${bold}Games applications install...${normal}"
-    python ./src/common/games.py
+    python ./src/software/games.py
 }
-developInstall() {
+develop_install() {
+    while :
+    do
+    echo "${bold}Select apps to install:${normal}
+
+    [1] Develop tools.
+    [2] All applications.
+    [0] Back.
+    "
+    read -p "Select option: " option
+
+    case $option in
+        *)
+            echo "Wrong option."
+            ;;
+        0)
+            break
+            ;;
+    esac
+    done
+}
+develop_tools_install() {
     echo "${bold}Development Tools install...${normal}"
     python ./src/development/develop-tools.py
 }
-zshInstall() {
+zsh_install() {
     echo "${bold}Zsh package install...${normal}"
     python src/development/zsh-setup.py
 }
 
-idesInstall() {
+ides_install() {
     echo "${bold}VS Code and Intellij IDEA install...${normal}"
     python src/development/ides.py
 }
-printDone() {
+print_done() {
     echo -e "\n${bold}Done!${normal}"
 }
 
 echo -e "\nHello $user! It's basic Fedora setup."
 
+#basic_setup
+
 while :
 do
-echo "
-    Pleas select install option:
-    [1] Common applications.
-    [2] Common and games applications.
-    [3] Common and develop applications.
-    [4] Common, game and develop applications.
-    [5] Yaru theme install.
-    [0] Exit.
-"
-read -p "Select option: " option
+    echo "
+If you want to install applications, select the installation option:
 
-case $option in
-    0)
-        break
-        ;;
-    1)
-        commonInstall
-        printDone
-        ;;
-    2)
-        commonInstall
-        gamesInstall
-        printDone
-        ;;
-    3)
-        commonInstall
-        developInstall
-        printDone
-        ;;
-    4)  
-        commonInstall
-        gamesInstall
-        developInstall
-        printDone
-        ;;
-    5)
-        themeInstall
-        printDone
-        ;;
-    *)
-        echo "Wrong option."
-        ;;
+    [1] Common applications.
+    [2] Games applications.
+    [3] Develop tools.
+    [4] Zsh.
+    [5] VS Code and IntelliJ IDEA.
+    [6] All applications.
+    [7] Develop apps menu.
+    [0] Exit.
+    "
+    read -p "Select option: " option
+
+    case $option in
+        *)
+            echo "Wrong option."
+            ;;
+        0)
+            break
+            ;;
+        1)
+            common_install
+            print_done
+            ;;
+        2)
+            games_install
+            print_done
+            ;;
+        3)  
+            develop_tools_install
+            print_done
+            ;;
+        4)
+            zsh_install
+            print_done
+            ;;
+        5)
+            ides_install
+            print_done
+            ;;
+        6)
+            common_install
+            games_install
+            develop_tools_install
+            zsh_install
+            ides_install
+            print_done
+            ;;
+        7)
+            print_done
+            ;;
 esac
 done
