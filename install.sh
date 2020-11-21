@@ -17,27 +17,6 @@ games_install() {
     echo "${bold}Games applications install...${normal}"
     python ./src/software/games.py
 }
-develop_install() {
-    while :
-    do
-    echo "${bold}Select apps to install:${normal}
-
-    [1] Develop tools.
-    [2] All applications.
-    [0] Back.
-    "
-    read -p "Select option: " option
-
-    case $option in
-        *)
-            echo "Wrong option."
-            ;;
-        0)
-            break
-            ;;
-    esac
-    done
-}
 develop_tools_install() {
     echo "${bold}Development Tools install...${normal}"
     python ./src/development/develop-tools.py
