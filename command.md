@@ -32,9 +32,14 @@
 
 `sudo dnf install gnome-tweaks`
 
-### Apps from Flathub (Telegram, Bitwarden, VLC, Remmina)
+### Apps from Flathub (Bitwarden, VLC, Remmina)
 
-`flatpak install flathub org.telegram.desktop com.bitwarden.desktop com.spotify.Client`
+`flatpak install flathub com.bitwarden.desktop com.spotify.Client`
+
+### Telegram
+
+`wget https://telegram.org/dl/desktop/linux`
+`tar -xvf ./linux -C $HOME/.local/share/ && rm ./linux`
 
 ### Chrome
 
