@@ -71,7 +71,7 @@
 
 ### Fonts
 
-`sudo dnf install powerline-fonts`
+`pip install --user powerline-status`
 
 `sudo dnf install fira-code-fonts`
 
