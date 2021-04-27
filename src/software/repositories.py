@@ -14,7 +14,4 @@ os.system("sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfu
 os.system("sudo dnf update -y")
 
 # Install Multimedia codec package
-os.system("sudo dnf groupupdate -y Multimedia")
-
-# Fonts
-os.system("sudo dnf install -y google-roboto-condensed-fonts google-roboto-fonts google-roboto-mono-fonts google-roboto-slab-fonts")
+# os.system("sudo dnf groupupdate -y Multimedia")

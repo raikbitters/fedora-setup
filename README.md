@@ -6,20 +6,15 @@ Script for fast setup Fedora
 
 * Enable RPM Fusion Free
 * Enable RPM Fusion NonFree
-* Install Multimedia codec package
 * Enable Flathub in Gnome software app
 * Install Roboto fonts.
 
 ## Common applications
 
 * Gnome tweaks
-* Gnome extension
 * Telegram
-* Bitwarde
 * Chrome
-* Spotify
 * Zoom
-* Remmina
 
 ## Applications for games
 
@@ -37,8 +32,6 @@ Script for fast setup Fedora
 * Oh My Zsh
 * Rust
 * VS Code
-* IntelliJ IDEA
 * Node.js
 * Yarn
 * Virtualization tools
-* Visualization Software (graphviz)

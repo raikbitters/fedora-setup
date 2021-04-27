@@ -4,89 +4,94 @@ user=$USER
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-function basic_setup {
+# Software install functions
+function repositories_setup {
     echo -e "\n${bold}Basic setup...${normal}\n"
-    python ./src/software/basic.py
+    python ./src/software/repositories.py
 }
-function common_install {
-    echo -e "\n${bold}Common applications install...${normal}\n"
-    python ./src/software/apps.py
+function tweaks {
+    echo -e "\n${bold}Install gnome tweaks...${normal}\n"
+    python ./src/software/tweaks.py
+}
+function telegram {
+    echo -e "\n${bold}Install Telegram...${normal}\n"
+    python ./src/software/telegram.py
+}
+function chrome {
+    echo -e "\n${bold}Install Chrome...${normal}\n"
+    python ./src/software/chrome.py
+}
+function zoom {
+    echo -e "\n${bold}Install Zoom...${normal}\n"
+    python ./src/software/zoom.py
 }
 function games_install {
     echo -e "\n${bold}Games applications install...${normal}\n"
     python ./src/software/games.py
 }
-function develop_tools_install {
-    echo -e "\n${bold}Development Tools install...${normal}\n"
-    python ./src/development/develop-tools.py
-}
-function zsh_install {
+
+# Develop install functions
+function zsh_setup {
     echo -e "\n${bold}Zsh package install...${normal}\n"
-    python src/development/zsh-setup.py
+    python src/development/zsh.py
 }
-function ides_install {
-    echo -e "\n${bold}VS Code and Intellij IDEA install...${normal}\n"
-    python src/development/ides.py
+function dev_fonts {
+    echo -e "\n${bold}Installing development fonts...${normal}\n"
+    python src/development/fonts.py
+}
+function code {
+    echo -e "\n${bold}Installing Visual Studio Code...${normal}\n"
+    python src/development/code.py
 }
 function print_done {
     echo -e "\n${bold}Done!${normal}"
 }
-function developer_menu {
+
+# Programming languages install functions
+function rust_install {
+    echo -e "\n${bold}Installing Rust...${normal}\n"
+    python ./src/development/rust.py
+}
+function nodejs_install {
+    echo -e "\n${bold}Installing Node.js...${normal}\n"
+    python ./src/development/nodejs.py
+}
+function c_plus_install {
+    echo -e "\n${bold}Installing C++...${normal}\n"
+    python ./src/development/c_plus.py
+}
+function set_java_home {
+    echo -e "\n${bold}Set $JAVA_HOME...${normal}\n"
+    python ./src/development/java_home.py
+}
+function virtualization_install {
+    echo -e "\n${bold}Installing Virtualization...${normal}\n"
+    python ./src/development/virtualization.py
+}
+
+# CLI
+function main_menu {
     option=""
     until [ "$option" = "0" ]; do
 
-    echo -e "\n${bold}Developer menu${normal}"
-    echo "
-    Installation options:
-
-    [1] Develop tools install
-    [2] Oh My Zsh install
-    [3] VS Code and IntelliJ IDEA install
-    [4] All developer apps install
-
-    Other options:
-    
-    [0] Return to Main menu
-    "
-    read -p "Select option: " option
-
-    case $option in
-        0)
-            break;;
-        1)
-            develop_tools_install
-            print_done;;
-        2)
-            zsh_install
-            print_done;;
-        3)
-            ides_install
-            print_done;;
-        4)
-            develop_tools_install
-            ides_install
-            zsh_install
-            print_done;;
-        *)  
-            echo -e "\n${bold}Wrong option${normal}";;
-    esac
-    done
-}
-function main_menu {
-    option=""
-    until [ "$option" = "4" ]; do
+    echo -e "\nHello $user! It's fast Fedora setup."
 
     echo -e "\n${bold}Main menu${normal}"
     echo -e "
     Installation options:
     
-    [1] Common applications
-    [2] Games applications
-    [3] All applications
-
-    Other options:
+    [1] Setup third party repositories
+    [2] Gnome tweaks
+    [3] Telegram
+    [4] Chrome
+    [5] Zoom
+    [6] Games applications (Steam, Lutris, Discord)
+    [7] All applications
     
-    [4] Developer menu
+    Other options:
+
+    [8] Turn on Fractional scaling
+    [9] Developer menu
     [0] Exit
     "
     read -p "Select option: " option
@@ -95,16 +100,36 @@ function main_menu {
         0)
             exit;;
         1)
-            common_install
+            repositories_setup
             print_done;;
         2)
-            games_install
+            tweaks
             print_done;;
         3)
-            common_install
-            games_install
+            telegram
             print_done;;
         4)
+            chrome
+            print_done;;
+        5)
+            zoom
+            print_done;;
+        6)
+            games_install
+            print_done;;
+        7)
+            repositories_setup
+            tweaks
+            telegram
+            chrome
+            zoom
+            games_install
+            print_done;;
+        8)
+            gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+            print_done;;
+        9)
+            clear
             developer_menu;;
         *)  
             echo -e "\n${bold}Wrong option${normal}";;
@@ -112,8 +137,100 @@ function main_menu {
     done
 }
 
-echo -e "\nHello $user! It's fast Fedora setup."
+function developer_menu {
+    option=""
+    until [ "$option" = "0" ]; do
 
-basic_setup
+    echo -e "\nHello $user! It's fast Fedora setup."
+
+    echo -e "\n${bold}Developer menu${normal}"
+    echo "
+    Installation options:
+
+    [1] Zsh (Oh My Zsh)
+    [2] Develop fonts
+    [3] Visual Studio Code
+
+    Other options:
+
+    [4] Programming languages menu
+    [0] Return to Main menu
+    "
+    read -p "Select option: " option
+
+    case $option in
+        0)
+            clear
+            main_menu;;
+        1)
+            zsh_setup
+            print_done;;
+        2)
+            dev_fonts
+            print_done;;
+        3)
+            code
+            print_done;;
+        4)
+            clear
+            programming_menu;;
+        *)  
+            echo -e "\n${bold}Wrong option${normal}";;
+    esac
+    done
+}
+
+function programming_menu {
+    option=""
+    until [ "$option" = "0" ]; do
+
+    echo -e "\nHello $user! It's fast Fedora setup."
+
+    echo -e "\n${bold}Programming languages menu${normal}"
+    echo "
+    Installation options:
+
+    [1] Rust
+    [2] Node.js (with Yarn)
+    [3] C++
+    [4] Set JAVA_HOME
+    [5] Virtualization
+
+    Other options:
+    
+    [6] Return to Developer menu
+    [0] Return to Main menu
+    "
+    read -p "Select option: " option
+
+    case $option in
+        0)
+            clear
+            main_menu;;
+        1)
+            rust_install
+            print_done;;
+        2)
+            nodejs_install
+            print_done;;
+        3)
+            c_plus_install
+            print_done;;
+        4)
+            set_java_home
+            print_done;;
+        5)
+            virtualization_install
+            print_done;;
+        6)
+            clear
+            developer_menu;;
+        *)  
+            echo -e "\n${bold}Wrong option${normal}";;
+    esac
+    done
+}
+
+# Initialization
 
 main_menu

@@ -11,10 +11,6 @@ os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/too
 os.system("sudo dnf install -y util-linux-user")
 os.system("chsh -s $(which zsh)")
 
-# Fonts for Oh My Zsh
-os.system("sudo dnf install -y fontawesome-fonts")
-os.system("pip install --user powerline-status")
-
 # Zsh plugins
 os.system("git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting")
 os.system("git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions")
