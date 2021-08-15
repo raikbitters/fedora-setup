@@ -1,6 +1,16 @@
-# Fedora fast setup
+# Fedora basic setup
 
-Script for fast setup Fedora
+Script for basic setup Fedora
+
+## Use
+
+Move to the project:
+
+```cd ./fedora-basic-setup```
+
+Run:
+
+```./install.sh```
 
 ## Basic setup
 
