@@ -42,6 +42,6 @@ Run:
 * Oh My Zsh
 * Rust
 * VS Code
-* Node.js
-* Yarn
+* Node Version Manager
+* Yarn with Node.js
 * Virtualization tools

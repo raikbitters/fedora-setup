@@ -52,9 +52,13 @@ function rust_install {
     echo -e "\n${bold}Installing Rust...${normal}\n"
     python ./src/development/rust.py
 }
-function nodejs_install {
+function nvm_install {
     echo -e "\n${bold}Installing Node.js...${normal}\n"
-    python ./src/development/nodejs.py
+    python ./src/development/nvm.py
+}
+function yarn_install {
+    echo -e "\n${bold}Installing Node.js...${normal}\n"
+    python ./src/development/yarn.py
 }
 function c_plus_install {
     echo -e "\n${bold}Installing C++...${normal}\n"
@@ -191,10 +195,11 @@ function programming_menu {
     Installation options:
 
     [1] Rust
-    [2] Node.js (with Yarn)
-    [3] C++
-    [4] Set JAVA_HOME
-    [5] Virtualization
+    [2] Node Version Manager
+    [3] Yarn and Node.js
+    [4] C++
+    [5] Set JAVA_HOME
+    [6] Virtualization
 
     Other options:
     
@@ -211,7 +216,10 @@ function programming_menu {
             rust_install
             print_done;;
         2)
-            nodejs_install
+            nvm_install
+            print_done;;
+        3)
+            yarn_install
             print_done;;
         3)
             c_plus_install
