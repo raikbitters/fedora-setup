@@ -11,37 +11,3 @@ Move to the project:
 Run:
 
 ```./install.sh```
-
-## Basic setup
-
-* Enable RPM Fusion Free
-* Enable RPM Fusion NonFree
-* Enable Flathub in Gnome software app
-* Install Roboto fonts.
-
-## Common applications
-
-* Gnome tweaks
-* Telegram
-* Chrome
-* Zoom
-
-## Applications for games
-
-* Steam
-* Lutris
-* Discord
-
-## Install developer tools
-
-* Fonts
-  * Powerline
-  * Fira code
-  * Fontawesome
-* Zsh
-* Oh My Zsh
-* Rust
-* VS Code
-* Node Version Manager
-* Yarn with Node.js
-* Virtualization tools
