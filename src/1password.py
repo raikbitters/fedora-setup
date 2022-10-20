@@ -1,5 +1,3 @@
-# 1Password
-
 import os
 import subprocess
 
