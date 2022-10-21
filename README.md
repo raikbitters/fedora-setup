@@ -2,7 +2,7 @@
 
 Script for basic setup Fedora
 
-## Use
+## How to use
 
 Move to the project:
 
