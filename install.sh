@@ -70,16 +70,6 @@ function install_dev_tools {
 function install_docker {
     echo -e "\n${bold}Installing Docker...${normal}\n"
     python ./src/development/docker.py
-    setup_docker_non_root
-    reboot
-}
-
-function setup_docker_non_root {
-    echo -e "\n${bold}To create the docker group and add your user...${normal}\n"
-    sudo groupadd docker && \
-    sudo usermod -aG docker $USER && \
-    newgrp docker
-    echo -e "\nTo verify that you can run docker commands without sudo after reboot!"
 }
 
 # CLI
