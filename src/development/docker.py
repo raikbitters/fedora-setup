@@ -14,4 +14,4 @@ os.system('sudo systemctl enable docker.service')
 os.system('sudo systemctl enable containerd.service')
 
 # Docker Engine post-installation steps
-os.system('echo -e "\nYou can manage Docker as a non-root user. To get more details, go to https://docs.docker.com/engine/install/linux-postinstall"')
+os.system('echo -e "\nYou can manage Docker as a non-root user. For more information, please visit https://docs.docker.com/engine/install/linux-postinstall"')
