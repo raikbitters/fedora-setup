@@ -36,19 +36,19 @@ function open_main_menu {
             0)
                 exit;;
             1)
-                source /scripts/1password.sh;;
+                source ./scripts/1password.sh;;
             2)
-                source /scripts/zsh.sh;;
+                source ./scripts/zsh.sh;;
             3) 
-                source /scripts/code.sh;;
+                source ./scripts/code.sh;;
             4)
-                source /scripts/docker.sh;;
+                source ./scripts/docker.sh;;
             5) 
-                source /scripts/rust.sh;;
+                source ./scripts/rust.sh;;
             6)
-                source /scripts/nvm.sh;;
+                source ./scripts/nvm.sh;;
             7)
-                source /scripts/fonts.sh;;
+                source ./scripts/fonts.sh;;
             *)  
                 print_option_exception;;
         esac
