@@ -22,11 +22,10 @@ function open_main_menu {
         [1] Install 1Password
         [2] Install Zsh with Oh My Zsh
         [3] Install Visual Studio Code
-        [4] Install Rust
-        [5] Install Node Version Manager
-        [6] Install Developer tools
-        [7] Install Docker
-        [8] Install additional fonts
+        [4] Install Docker
+        [5] Install Rust
+        [6] Install Node Version Manager
+        [7] Install additional fonts
         
 
         [0] Exit
@@ -42,15 +41,13 @@ function open_main_menu {
                 source /scripts/zsh.sh;;
             3) 
                 source /scripts/code.sh;;
-            4) 
-                source /scripts/rust.sh;;
-            5)
-                source /scripts/nvm.sh;;
-            6)
-                source /scripts/dev.sh;;
-            7)
+            4)
                 source /scripts/docker.sh;;
-            8)
+            5) 
+                source /scripts/rust.sh;;
+            6)
+                source /scripts/nvm.sh;;
+            7)
                 source /scripts/fonts.sh;;
             *)  
                 print_option_exception;;
