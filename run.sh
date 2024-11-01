@@ -24,9 +24,14 @@ function open_main_menu {
         [3] Install Visual Studio Code
         [4] Install Docker
         [5] Install Rust
-        [6] Install Node Version Manager
-        [7] Install additional fonts
-        
+        [6] Install Go
+        [7] Install Node Version Manager
+        [8] Install additional fonts
+        [9] Install Discord
+
+        Configuration options:
+        [10] Enable fractional scaling
+        [11] Set up Git user name and email
 
         [0] Exit
         "
@@ -46,9 +51,17 @@ function open_main_menu {
             5) 
                 source ./scripts/rust.sh;;
             6)
-                source ./scripts/nvm.sh;;
+                source ./scripts/go.sh;;
             7)
+                source ./scripts/nvm.sh;;
+            8)
                 source ./scripts/fonts.sh;;
+            9)
+                source ./scripts/discord.sh;;
+            10)
+                source ./scripts/scaling.sh;;
+            11)
+                source ./scripts/git.sh;;
             *)  
                 print_option_exception;;
         esac
