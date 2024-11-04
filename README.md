@@ -28,8 +28,8 @@ Script for basic setup Fedora
 
 Move to the project:
 
-```cd ./fedora-basic-setup```
+```cd ./fedora-setup```
 
 Run:
 
-```./install.sh```
+```./run.sh```
