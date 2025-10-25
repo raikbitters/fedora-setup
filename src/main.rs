@@ -13,6 +13,7 @@ use menu::{MainMenuItem, MAIN_MENU_ITEMS};
 #[derive(Parser)]
 #[command(name = "fedora-setup")]
 #[command(about = "Fast Fedora setup tool", long_about = None)]
+#[command(version)]
 struct Cli {
     command: Option<String>,
 
@@ -63,8 +64,9 @@ fn run_interactive_menu() -> Result<()> {
         print!("\x1B[2J\x1B[1;1H");
 
         let user = std::env::var("USER").unwrap_or_else(|_| "User".to_string());
+        let version = env!("CARGO_PKG_VERSION");
 
-        println!("\nHello {}! It's fast Fedora setup.\n", user.cyan());
+        println!("\nHello {}! It's fast Fedora setup {}.\n", user.cyan(), format!("v{}", version).bright_black());
 
         let menu_items: Vec<String> = MAIN_MENU_ITEMS
             .iter()
