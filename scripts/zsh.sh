@@ -16,8 +16,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/k
 
-# OhMyZsh theme
-cp -f ./assets/zsh/neo-robbyrussell.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/
-
 # Copy zsh configuration
 cp -f ./assets/zsh/.zshrc $HOME/.zshrc
+
+# GTK CSS for increased padding
+mkdir -p $HOME/.config/gtk-4.0
+cp -f ./assets/zsh/gtk.css $HOME/.config/gtk-4.0/gtk.css
