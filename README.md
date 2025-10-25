@@ -16,6 +16,36 @@ Key Features:
 - **CLI-friendly**: Execute installations directly via command-line arguments
 - **Secure downloads**: Uses system `curl` with proper TLS settings
 
+## Installation
+
+### Download Prebuilt Binary (Recommended)
+
+```bash
+# Download the binary
+curl -LO https://github.com/raikbitters/fedora-setup/releases/download/1.0.0/fedora-setup
+
+# Make it executable
+chmod +x fedora-setup
+
+# Move to your PATH
+sudo mv fedora-setup /usr/local/bin/
+```
+
+### Install from Source
+
+```bash
+git clone https://github.com/raikbitters/fedora-setup.git
+cd fedora-setup
+cargo build --release
+sudo cp target/release/fedora-setup /usr/local/bin/
+```
+
+Or install globally via cargo:
+
+```bash
+cargo install --path .
+```
+
 ## Usage
 
 The tool supports both interactive mode and direct CLI commands.
@@ -61,6 +91,14 @@ List all available commands:
 fedora-setup --list
 ```
 
+### Version
+
+Display version information:
+
+```bash
+fedora-setup --version
+```
+
 ### Help
 
 Display help information:
@@ -87,23 +125,16 @@ The binary will be located at `target/release/fedora-setup`.
 
 ### Running
 
-From source:
+During development:
 
 ```bash
 cargo run
 ```
 
-From binary:
+Or run the built binary directly:
 
 ```bash
 ./target/release/fedora-setup
-```
-
-Or install globally:
-
-```bash
-cargo install --path .
-fedora-setup
 ```
 
 ### Project Structure

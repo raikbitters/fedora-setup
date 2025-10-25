@@ -44,24 +44,6 @@ First public release of Fedora Setup CLI - a modern tool for quick installation 
 - **Git** - Configure user name and email
 - **Fractional Scaling** - Enable/disable fractional scaling in GNOME
 
-### Technical Details
-
-**Dependencies:**
-
-- `dialoguer` - Interactive CLI prompts
-- `console` - Terminal utilities
-- `colored` - Colored terminal output
-- `anyhow` - Error handling
-- `dirs` - Home directory utilities
-- `cmd_lib` - Ergonomic shell command execution
-- `clap` - Command-line argument parsing
-
-**System Requirements:**
-
-- Fedora Linux
-- Rust toolchain (for building from source)
-- GCC compiler (for building from source)
-
 ### Usage Examples
 
 ```bash
@@ -76,16 +58,32 @@ fedora-setup zsh
 # List all available commands
 fedora-setup --list
 
+# Show version
+fedora-setup --version
+
 # Show help
 fedora-setup --help
 ```
 
 ### Installation
 
+**Download prebuilt binary (recommended):**
+
+```bash
+# Download the binary
+curl -LO https://github.com/raikbitters/fedora-setup/releases/download/1.0.0/fedora-setup
+
+# Make it executable
+chmod +x fedora-setup
+
+# Move to your PATH
+sudo mv fedora-setup /usr/local/bin/
+```
+
 **From source:**
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/raikbitters/fedora-setup.git
 cd fedora-setup
 cargo build --release
 sudo cp target/release/fedora-setup /usr/local/bin/
