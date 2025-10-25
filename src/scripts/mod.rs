@@ -1,0 +1,24 @@
+mod utils;
+mod onepassword;
+mod zsh;
+mod vscode;
+mod docker;
+mod rust_lang;
+mod golang;
+mod nvm;
+mod fonts;
+mod discord;
+mod scaling;
+mod git;
+
+pub use onepassword::install_1password;
+pub use zsh::install_zsh;
+pub use vscode::install_vscode;
+pub use docker::install_docker;
+pub use rust_lang::install_rust;
+pub use golang::install_go;
+pub use nvm::install_nvm;
+pub use fonts::install_fonts;
+pub use discord::install_discord;
+pub use scaling::enable_fractional_scaling;
+pub use git::setup_git;
