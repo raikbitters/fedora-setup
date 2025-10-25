@@ -4,37 +4,80 @@ A Rust-based CLI tool for quick Fedora system setup and configuration.
 
 ## Features
 
-This tool provides an interactive menu for installing and configuring various software on Fedora Linux.
+This tool provides both an interactive menu and direct CLI commands for installing and configuring various software on Fedora Linux.
 
-### Installation list
+Key Features:
 
-- [1Password](https://1password.com/)
-- [Zsh](https://ohmyz.sh/)
-- [Oh My Zsh with plugins](https://ohmyz.sh/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Rust](https://www.rust-lang.org/)
-- [Go](https://golang.org/)
-- [Node Version Manager](https://github.com/nvm-sh/nvm)
-- [Docker](https://docs.docker.com/engine/install/fedora/)
-- [Discord](https://discord.com/)
-- Additional fonts:
-  - [Fira Code](https://fonts.google.com/specimen/Fira+Code)
-  - [Font Awesome](https://fontawesome.com/)
-  - [Powerline status fonts](https://github.com/powerline/powerline)
-  - [Roboto](https://fonts.google.com/specimen/Roboto)
+- **Pure Rust implementation**: All installation logic written in Rust using `cmd_lib`
+- **Self-contained binary**: No external script files needed at runtime
+- **Dual-mode operation**: Interactive menu or direct CLI commands
+- **Minimal dependencies**: No heavy dependencies like `reqwest` or `openssl`
+- **Interactive menu**: Easy-to-use navigation with `dialoguer`
+- **CLI-friendly**: Execute installations directly via command-line arguments
+- **Secure downloads**: Uses system `curl` with proper TLS settings
 
-### Configuration options
+## Usage
 
-- Enable fractional scaling
-- Set Git name and email
+The tool supports both interactive mode and direct CLI commands.
 
-## Prerequisites
+### Interactive Mode
+
+Run without arguments to launch the interactive menu:
+
+```bash
+fedora-setup
+```
+
+Then:
+
+1. Use arrow keys to navigate the menu
+2. Press Enter to select an option
+3. Follow any prompts during installation
+4. Select "Exit" or "Ctrl+C" when done
+
+### CLI Mode
+
+Execute specific commands directly:
+
+```bash
+# Install Discord
+fedora-setup discord
+
+# Install Docker
+fedora-setup docker
+
+# Install and configure Zsh with Oh My Zsh
+fedora-setup zsh
+
+# Set up Git user name and email
+fedora-setup git
+```
+
+### Available Commands
+
+List all available commands:
+
+```bash
+fedora-setup --list
+```
+
+### Help
+
+Display help information:
+
+```bash
+fedora-setup --help
+```
+
+## Development
+
+### Prerequisites
 
 - Fedora Linux
 - Rust toolchain (install via `rustup`)
 - GCC compiler (`sudo dnf install gcc` or `sudo dnf group install c-development`)
 
-## Building
+### Building
 
 ```bash
 cargo build --release
@@ -42,7 +85,7 @@ cargo build --release
 
 The binary will be located at `target/release/fedora-setup`.
 
-## Running
+### Running
 
 From source:
 
@@ -63,15 +106,7 @@ cargo install --path .
 fedora-setup
 ```
 
-## Usage
-
-1. Run the program
-2. Use arrow keys to navigate the menu
-3. Press Enter to select an option
-4. Follow any prompts during installation
-5. Select "Exit" when done
-
-## Project Structure
+### Project Structure
 
 ```text
 fedora-setup/
@@ -97,15 +132,7 @@ fedora-setup/
 └── scripts/             # Original bash scripts (reference only, not used)
 ```
 
-## Key Features
-
-- **Pure Rust implementation**: All installation logic written in Rust using `cmd_lib`
-- **Self-contained binary**: No external script files needed at runtime
-- **Minimal dependencies**: No heavy dependencies like `reqwest` or `openssl`
-- **Interactive menu**: Easy-to-use navigation with `dialoguer`
-- **Secure downloads**: Uses system `curl` with proper TLS settings
-
-## Dependencies
+### Dependencies
 
 - `dialoguer` - Interactive CLI prompts
 - `console` - Terminal utilities
@@ -113,8 +140,9 @@ fedora-setup/
 - `anyhow` - Error handling
 - `dirs` - Home directory utilities
 - `cmd_lib` - Ergonomic shell command execution
+- `clap` - Command-line argument parsing
 
-## Implementation Details
+### Implementation Details
 
 All installations are implemented as pure Rust functions that use `cmd_lib::run_cmd!` macro for executing system commands. This approach provides:
 

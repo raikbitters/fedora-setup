@@ -1,24 +1,71 @@
 use anyhow::Result;
+use clap::Parser;
 use colored::Colorize;
 use dialoguer::{theme::ColorfulTheme, Select};
 
+mod cli;
 mod installer;
 mod menu;
 mod scripts;
 
 use menu::{MainMenuItem, MAIN_MENU_ITEMS};
 
+#[derive(Parser)]
+#[command(name = "fedora-setup")]
+#[command(about = "Fast Fedora setup tool", long_about = None)]
+struct Cli {
+    command: Option<String>,
+
+    #[arg(short, long)]
+    list: bool,
+}
+
 fn main() -> Result<()> {
+    let cli = Cli::parse();
+
+    if cli.list {
+        println!("Available commands:");
+        for cmd in cli::CliCommand::all() {
+            println!("  {:20} - {}", cmd.name(), cmd.description());
+        }
+        return Ok(());
+    }
+
+    if let Some(cmd) = cli.command {
+        return execute_command(&cmd);
+    }
+
+    run_interactive_menu()
+}
+
+fn execute_command(cmd: &str) -> Result<()> {
+    match cli::CliCommand::from_name(cmd) {
+        Some(cli_cmd) => {
+            let installer = cli_cmd.installer();
+            installer.execute()?;
+            println!("\n{} completed successfully!", cmd.green());
+        }
+        None => {
+            eprintln!("{}: Unknown command '{}'", "Error".red(), cmd);
+            eprintln!("\nAvailable commands:");
+            for cli_cmd in cli::CliCommand::all() {
+                eprintln!("  - {}", cli_cmd.name());
+            }
+            std::process::exit(1);
+        }
+    }
+    Ok(())
+}
+
+fn run_interactive_menu() -> Result<()> {
     loop {
         // Clear screen
         print!("\x1B[2J\x1B[1;1H");
 
-        // Get current user
         let user = std::env::var("USER").unwrap_or_else(|_| "User".to_string());
 
         println!("\nHello {}! It's fast Fedora setup.\n", user.cyan());
 
-        // Prepare menu items for display
         let menu_items: Vec<String> = MAIN_MENU_ITEMS
             .iter()
             .map(|item| {
@@ -31,7 +78,6 @@ fn main() -> Result<()> {
             })
             .collect();
 
-        // Show menu and get selection
         let selection = Select::with_theme(&ColorfulTheme::default())
             .with_prompt("Select option")
             .items(&menu_items)
@@ -47,10 +93,7 @@ fn main() -> Result<()> {
                         println!("\nGoodbye!");
                         break;
                     }
-                    MainMenuItem::Separator(_) => {
-                        // Separators are not selectable, continue loop
-                        continue;
-                    }
+                    MainMenuItem::Separator(_) => { continue; }
                     _ => {
                         if let Some(installer) = selected_item.installer() {
                             let _ = installer.execute();
@@ -59,7 +102,6 @@ fn main() -> Result<()> {
                 }
             }
             None => {
-                // User cancelled (Ctrl+C)
                 println!("\nGoodbye!");
                 break;
             }
