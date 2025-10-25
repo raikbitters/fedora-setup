@@ -1,8 +1,6 @@
 use anyhow::Result;
+use cmd_lib::run_cmd;
 use colored::Colorize;
-use std::fs;
-
-use super::utils::run_cmd;
 
 pub fn install_vscode() -> Result<()> {
     println!("{}", "Installing Visual Studio Code...".green().bold());

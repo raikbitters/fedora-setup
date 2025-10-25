@@ -1,4 +1,3 @@
-mod utils;
 mod onepassword;
 mod zsh;
 mod vscode;
@@ -21,4 +20,5 @@ pub use nvm::install_nvm;
 pub use fonts::install_fonts;
 pub use discord::install_discord;
 pub use scaling::enable_fractional_scaling;
+pub use scaling::disable_fractional_scaling;
 pub use git::setup_git;

@@ -1,7 +1,6 @@
 use anyhow::Result;
+use cmd_lib::run_cmd;
 use colored::Colorize;
-
-use super::utils::run_cmd;
 
 pub fn install_nvm() -> Result<()> {
     println!("{}", "Installing Node Version Manager...".green().bold());

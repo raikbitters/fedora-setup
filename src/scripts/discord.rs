@@ -1,40 +1,58 @@
 use anyhow::Result;
+use cmd_lib::run_cmd;
 use colored::Colorize;
 use std::fs;
-
-use super::utils::run_cmd;
+use std::path::PathBuf;
 
 pub fn install_discord() -> Result<()> {
     println!("{}", "Installing Discord...".green().bold());
 
+    // Get home directory
+    let home = std::env::var("HOME")?;
+    let install_dir = PathBuf::from(&home).join(".local/share");
+    let discord_dir = install_dir.join("Discord");
+    let applications_dir = PathBuf::from(&home).join(".local/share/applications");
+
     // Download Discord
     println!("Downloading Discord...");
-    run_cmd!(curl -L -o /tmp/discord.tar.gz "https://discord.com/api/download?platform=linux&format=tar.gz")?;
+    run_cmd!(wget "https://discord.com/api/download/stable?platform=linux&format=tar.gz" -O /tmp/discord.tar.gz)?;
 
-    // Extract to /opt
-    run_cmd!(sudo tar -xzf /tmp/discord.tar.gz -C /opt)?;
+    // Remove old installation if exists
+    if discord_dir.exists() {
+        println!("Removing old Discord installation...");
+        fs::remove_dir_all(&discord_dir)?;
+    }
 
-    // Create symlink
-    run_cmd!(sudo ln -sf /opt/Discord/Discord /usr/bin/Discord)?;
+    // Extract Discord
+    let install_path = install_dir.to_str().unwrap();
+    run_cmd!(tar -xzf /tmp/discord.tar.gz -C $install_path)?;
 
     // Create desktop entry
-    let desktop_entry = r#"[Desktop Entry]
+    let desktop_entry = format!(
+        r#"[Desktop Entry]
 Name=Discord
 StartupWMClass=discord
-Comment=All-in-one voice and text chat for gamers
+Comment=All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
 GenericName=Internet Messenger
-Exec=/usr/bin/Discord
-Icon=/opt/Discord/discord.png
+Exec={}
+Icon={}
 Type=Application
 Categories=Network;InstantMessaging;
-Path=/usr/bin"#;
+Path=/usr/bin"#,
+        discord_dir.join("Discord").display(),
+        discord_dir.join("discord.png").display()
+    );
 
-    fs::write("/tmp/discord.desktop", desktop_entry)?;
-    run_cmd!(sudo mv /tmp/discord.desktop /usr/share/applications/discord.desktop)?;
+    let desktop_file = applications_dir.join("discord.desktop");
+    fs::write(&desktop_file, desktop_entry)?;
 
     // Clean up
     run_cmd!(rm /tmp/discord.tar.gz)?;
 
     println!("{}", "✓ Discord installed successfully!".green().bold());
+    println!(
+        "{}",
+        "You can launch it from the Applications menu.".green()
+    );
     Ok(())
 }

@@ -1,13 +1,12 @@
 use anyhow::{Context, Result};
+use cmd_lib::run_cmd;
 use colored::Colorize;
 use dialoguer::Input;
-
-use super::utils::{append_if_missing, run_cmd};
 
 pub fn install_go() -> Result<()> {
     println!("{}", "Installing Go...".green().bold());
 
-    let default_version = "1.23.2";
+    let default_version = "1.25.3";
     let version: String = Input::new()
         .with_prompt("Enter Go version")
         .default(default_version.to_string())
@@ -34,9 +33,19 @@ pub fn install_go() -> Result<()> {
     ];
 
     for path in paths_to_update {
-        append_if_missing(&path, "export PATH=$PATH:/usr/local/go/bin")?;
-        append_if_missing(&path, "export GOPATH=$HOME/.go")?;
-        append_if_missing(&path, "export PATH=$PATH:$GOPATH/bin")?;
+        let path_str = path.to_str().unwrap();
+
+        // Add PATH for Go bin if not present
+        let cmd1 = format!(r#"grep -qxF 'export PATH=$PATH:/usr/local/go/bin' {} || echo 'export PATH=$PATH:/usr/local/go/bin' >> {}"#, path_str, path_str);
+        run_cmd!(sh -c $cmd1)?;
+
+        // Add GOPATH if not present
+        let cmd2 = format!(r#"grep -qxF 'export GOPATH=$HOME/.go' {} || echo 'export GOPATH=$HOME/.go' >> {}"#, path_str, path_str);
+        run_cmd!(sh -c $cmd2)?;
+
+        // Add PATH for GOPATH bin if not present
+        let cmd3 = format!(r#"grep -qxF 'export PATH=$PATH:$GOPATH/bin' {} || echo 'export PATH=$PATH:$GOPATH/bin' >> {}"#, path_str, path_str);
+        run_cmd!(sh -c $cmd3)?;
     }
 
     // Clean up

@@ -1,7 +1,6 @@
 use anyhow::Result;
+use cmd_lib::run_cmd;
 use colored::Colorize;
-
-use super::utils::run_cmd;
 
 pub fn install_docker() -> Result<()> {
     println!("{}", "Installing Docker...".green().bold());
@@ -13,12 +12,10 @@ pub fn install_docker() -> Result<()> {
     run_cmd!(sudo dnf config-manager addrepo $repo_url)?;
 
     // Install Docker
-    run_cmd!(sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin)?;
+    run_cmd!(sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin)?;
 
     // Start and enable Docker
-    run_cmd!(sudo systemctl start docker)?;
-    run_cmd!(sudo systemctl enable docker.service)?;
-    run_cmd!(sudo systemctl enable containerd.service)?;
+    run_cmd!(sudo systemctl enable --now docker)?;
 
     // Add user to docker group
     run_cmd!(sudo usermod -aG docker $user)?;

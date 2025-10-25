@@ -15,6 +15,7 @@ pub enum Installer {
     InstallFonts,
     InstallDiscord,
     EnableFractionalScaling,
+    DisableFractionalScaling,
     SetupGit,
 }
 
@@ -33,6 +34,7 @@ impl Installer {
             Installer::InstallFonts => scripts::install_fonts(),
             Installer::InstallDiscord => scripts::install_discord(),
             Installer::EnableFractionalScaling => scripts::enable_fractional_scaling(),
+            Installer::DisableFractionalScaling => scripts::disable_fractional_scaling(),
             Installer::SetupGit => scripts::setup_git(),
         };
 

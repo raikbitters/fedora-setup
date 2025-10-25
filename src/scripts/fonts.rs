@@ -1,7 +1,6 @@
 use anyhow::Result;
+use cmd_lib::run_cmd;
 use colored::Colorize;
-
-use super::utils::run_cmd;
 
 pub fn install_fonts() -> Result<()> {
     println!("{}", "Installing additional fonts...".green().bold());

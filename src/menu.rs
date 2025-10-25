@@ -15,6 +15,7 @@ pub enum MainMenuItem {
     InstallFonts,
     InstallDiscord,
     EnableFractionalScaling,
+    DisableFractionalScaling,
     SetupGit,
     Exit,
 }
@@ -32,6 +33,7 @@ impl MainMenuItem {
             MainMenuItem::InstallFonts => Some(Installer::InstallFonts),
             MainMenuItem::InstallDiscord => Some(Installer::InstallDiscord),
             MainMenuItem::EnableFractionalScaling => Some(Installer::EnableFractionalScaling),
+            MainMenuItem::DisableFractionalScaling => Some(Installer::DisableFractionalScaling),
             MainMenuItem::SetupGit => Some(Installer::SetupGit),
             _ => None,
         }
@@ -52,6 +54,7 @@ impl fmt::Display for MainMenuItem {
             MainMenuItem::InstallFonts => write!(f, "Install additional fonts"),
             MainMenuItem::InstallDiscord => write!(f, "Install Discord"),
             MainMenuItem::EnableFractionalScaling => write!(f, "Enable fractional scaling"),
+            MainMenuItem::DisableFractionalScaling => write!(f, "Disable fractional scaling"),
             MainMenuItem::SetupGit => write!(f, "Set up Git user name and email"),
             MainMenuItem::Exit => write!(f, "Exit"),
         }
@@ -71,6 +74,7 @@ pub const MAIN_MENU_ITEMS: &[MainMenuItem] = &[
     MainMenuItem::InstallDiscord,
     MainMenuItem::Separator("Configuration options:"),
     MainMenuItem::EnableFractionalScaling,
+    MainMenuItem::DisableFractionalScaling,
     MainMenuItem::SetupGit,
     MainMenuItem::Separator(""),
     MainMenuItem::Exit,
