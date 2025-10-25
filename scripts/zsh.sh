@@ -17,7 +17,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/k
 
 # OhMyZsh theme
-cp -f ./assets/zsh/neo-robbyrussell.zsh-theme $ZSH_CUSTOM/themes/
+cp -f ./assets/zsh/neo-robbyrussell.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/
 
 # Copy zsh configuration
 cp -f ./assets/zsh/.zshrc $HOME/.zshrc
