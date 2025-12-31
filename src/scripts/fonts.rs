@@ -11,9 +11,6 @@ pub fn install_fonts() -> Result<()> {
     // Font Awesome for Oh My Zsh
     run_cmd!(sudo dnf install -y fontawesome-fonts-all)?;
 
-    // Powerline fonts
-    run_cmd!(pip install --user powerline-status)?;
-
     println!("{}", "✓ Fonts installed successfully!".green().bold());
     Ok(())
 }
