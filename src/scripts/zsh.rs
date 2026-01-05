@@ -15,7 +15,7 @@ pub fn install_zsh() -> Result<()> {
 
     if !oh_my_zsh.exists() {
         let url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh";
-        run_cmd!(sh -c "$(curl -fsSL $url)" "" --unattended)?;
+        run_cmd!(bash -c "curl -fsSL $url | bash -s -- --unattended")?;
     }
 
     // Install plugins
