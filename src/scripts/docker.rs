@@ -9,10 +9,12 @@ pub fn install_docker() -> Result<()> {
 
     // Add Docker repository
     let repo_url = "https://download.docker.com/linux/fedora/docker-ce.repo";
-    run_cmd!(sudo dnf config-manager addrepo $repo_url)?;
+    run_cmd!(sudo dnf config-manager addrepo --from-repofile=$repo_url --overwrite)?;
+
+    run_cmd!(sudo dnf update -y)?;
 
     // Install Docker
-    run_cmd!(sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin)?;
+    run_cmd!(sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y)?;
 
     // Start and enable Docker
     run_cmd!(sudo systemctl enable --now docker)?;
