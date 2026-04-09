@@ -1,15 +1,17 @@
 use anyhow::{Context, Result};
-use cmd_lib::run_cmd;
+use cmd_lib::{run_cmd, run_fun};
 use colored::Colorize;
 use dialoguer::Input;
 
 pub fn install_go() -> Result<()> {
     println!("{}", "Installing Go...".green().bold());
 
-    let default_version = "1.25.3";
+    // Get Go latest version
+    let version_url = "https://go.dev/VERSION?m=text";
+    let latest_version = run_fun!(curl -s $version_url | head -1)?;
     let version: String = Input::new()
         .with_prompt("Enter Go version")
-        .default(default_version.to_string())
+        .default(latest_version.trim_start_matches("go").to_string())
         .interact_text()?;
 
     // Download Go
@@ -36,15 +38,24 @@ pub fn install_go() -> Result<()> {
         let path_str = path.to_str().unwrap();
 
         // Add PATH for Go bin if not present
-        let cmd1 = format!(r#"grep -qxF 'export PATH=$PATH:/usr/local/go/bin' {} || echo 'export PATH=$PATH:/usr/local/go/bin' >> {}"#, path_str, path_str);
+        let cmd1 = format!(
+            r#"grep -qxF 'export PATH=$PATH:/usr/local/go/bin' {} || echo 'export PATH=$PATH:/usr/local/go/bin' >> {}"#,
+            path_str, path_str
+        );
         run_cmd!(sh -c $cmd1)?;
 
         // Add GOPATH if not present
-        let cmd2 = format!(r#"grep -qxF 'export GOPATH=$HOME/.go' {} || echo 'export GOPATH=$HOME/.go' >> {}"#, path_str, path_str);
+        let cmd2 = format!(
+            r#"grep -qxF 'export GOPATH=$HOME/.go' {} || echo 'export GOPATH=$HOME/.go' >> {}"#,
+            path_str, path_str
+        );
         run_cmd!(sh -c $cmd2)?;
 
         // Add PATH for GOPATH bin if not present
-        let cmd3 = format!(r#"grep -qxF 'export PATH=$PATH:$GOPATH/bin' {} || echo 'export PATH=$PATH:$GOPATH/bin' >> {}"#, path_str, path_str);
+        let cmd3 = format!(
+            r#"grep -qxF 'export PATH=$PATH:$GOPATH/bin' {} || echo 'export PATH=$PATH:$GOPATH/bin' >> {}"#,
+            path_str, path_str
+        );
         run_cmd!(sh -c $cmd3)?;
     }
 
