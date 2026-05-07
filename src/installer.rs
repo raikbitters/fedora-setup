@@ -9,13 +9,8 @@ pub enum Installer {
     InstallZsh,
     InstallVSCode,
     InstallDocker,
-    InstallRust,
-    InstallGo,
-    InstallNvm,
     InstallFonts,
     InstallDiscord,
-    EnableFractionalScaling,
-    DisableFractionalScaling,
     SetupGit,
 }
 
@@ -28,13 +23,8 @@ impl Installer {
             Installer::InstallZsh => scripts::install_zsh(),
             Installer::InstallVSCode => scripts::install_vscode(),
             Installer::InstallDocker => scripts::install_docker(),
-            Installer::InstallRust => scripts::install_rust(),
-            Installer::InstallGo => scripts::install_go(),
-            Installer::InstallNvm => scripts::install_nvm(),
             Installer::InstallFonts => scripts::install_fonts(),
             Installer::InstallDiscord => scripts::install_discord(),
-            Installer::EnableFractionalScaling => scripts::enable_fractional_scaling(),
-            Installer::DisableFractionalScaling => scripts::disable_fractional_scaling(),
             Installer::SetupGit => scripts::setup_git(),
         };
 
