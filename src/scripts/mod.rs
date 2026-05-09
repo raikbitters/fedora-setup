@@ -2,14 +2,17 @@ mod discord;
 mod docker;
 mod fonts;
 mod git;
+mod mise;
 mod onepassword;
 mod vscode;
+mod zed;
 mod zsh;
-
 pub use discord::install_discord;
 pub use docker::install_docker;
 pub use fonts::install_fonts;
 pub use git::setup_git;
+pub use mise::install_mise;
 pub use onepassword::install_1password;
 pub use vscode::install_vscode;
+pub use zed::install_zed;
 pub use zsh::install_zsh;

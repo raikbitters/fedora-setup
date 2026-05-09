@@ -4,11 +4,10 @@ use colored::Colorize;
 use dialoguer::{theme::ColorfulTheme, Select};
 
 mod cli;
-mod installer;
 mod menu;
 mod scripts;
 
-use menu::{MainMenuItem, MAIN_MENU_ITEMS};
+use menu::{install, MainMenuItem, MAIN_MENU_ITEMS};
 
 #[derive(Parser)]
 #[command(name = "fedora-setup")]
@@ -42,8 +41,8 @@ fn main() -> Result<()> {
 fn execute_command(cmd: &str) -> Result<()> {
     match cli::CliCommand::from_name(cmd) {
         Some(cli_cmd) => {
-            let installer = cli_cmd.installer();
-            installer.execute()?;
+            let action = cli_cmd.action();
+            action()?;
             println!("\n{} completed successfully!", cmd.green());
         }
         None => {
@@ -66,7 +65,11 @@ fn run_interactive_menu() -> Result<()> {
         let user = std::env::var("USER").unwrap_or_else(|_| "User".to_string());
         let version = env!("CARGO_PKG_VERSION");
 
-        println!("\nHello {}! It's fast Fedora setup {}.\n", user.cyan(), format!("v{}", version).bright_black());
+        println!(
+            "\nHello {}! It's fast Fedora setup {}.\n",
+            user.cyan(),
+            format!("v{}", version).bright_black()
+        );
 
         let menu_items: Vec<String> = MAIN_MENU_ITEMS
             .iter()
@@ -95,10 +98,12 @@ fn run_interactive_menu() -> Result<()> {
                         println!("\nGoodbye!");
                         break;
                     }
-                    MainMenuItem::Separator(_) => { continue; }
+                    MainMenuItem::Separator(_) => {
+                        continue;
+                    }
                     _ => {
-                        if let Some(installer) = selected_item.installer() {
-                            let _ = installer.execute();
+                        if let Some(action) = selected_item.action() {
+                            let _ = install(action);
                         }
                     }
                 }

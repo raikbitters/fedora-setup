@@ -22,7 +22,7 @@ Key Features:
 
 ```bash
 # Download the binary
-curl -LO https://github.com/raikbitters/fedora-setup/releases/download/1.0.0/fedora-setup
+curl -LO https://github.com/raikbitters/fedora-setup/releases/download/1.1.0/fedora-setup
 
 # Make it executable
 chmod +x fedora-setup
@@ -78,6 +78,12 @@ fedora-setup docker
 
 # Install and configure Zsh with Oh My Zsh
 fedora-setup zsh
+
+# Install Mise version manager
+fedora-setup mise
+
+# Install Zed editor
+fedora-setup zed
 
 # Set up Git user name and email
 fedora-setup git
@@ -142,25 +148,21 @@ Or run the built binary directly:
 ```text
 fedora-setup/
 ├── Cargo.toml           # Rust project dependencies
-├── src/
-│   ├── main.rs          # Main application entry point with interactive menu
-│   ├── menu.rs          # Menu item definitions
-│   ├── installer.rs     # Installation coordinator
-│   └── scripts/         # Installation modules (pure Rust implementations)
-│       ├── mod.rs
-│       ├── utils.rs     # Common utilities
-│       ├── onepassword.rs
-│       ├── vscode.rs
-│       ├── docker.rs
-│       ├── zsh.rs
-│       ├── rust_lang.rs
-│       ├── golang.rs
-│       ├── nvm.rs
-│       ├── fonts.rs
-│       ├── discord.rs
-│       ├── scaling.rs
-│       └── git.rs
-└── scripts/             # Original bash scripts (reference only, not used)
+└── src/
+   ├── main.rs          # Main application entry point with interactive menu
+   ├── cli.rs           # CLI command definitions
+   ├── menu.rs          # Interactive menu item definitions
+   └── scripts/         # Installation modules (pure Rust implementations)
+       ├── mod.rs
+       ├── onepassword.rs
+       ├── vscode.rs
+       ├── zed.rs
+       ├── docker.rs
+       ├── zsh.rs
+       ├── mise.rs
+       ├── fonts.rs
+       ├── discord.rs
+       └── git.rs
 ```
 
 ### Dependencies
@@ -185,9 +187,8 @@ All installations are implemented as pure Rust functions that use `cmd_lib::run_
 Example:
 
 ```rust
-pub fn install_rust() -> Result<()> {
-    let url = "https://sh.rustup.rs";
-    run_cmd!(curl --proto "=https" --tlsv1.2 -sSf $url | sh -s -- -y)?;
+pub fn install_zed() -> Result<()> {
+    run_cmd!(bash -c "curl -f https://zed.dev/install.sh | sh")?;
     Ok(())
 }
 ```

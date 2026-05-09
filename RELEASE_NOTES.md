@@ -1,5 +1,33 @@
 # Release Notes
 
+## Version 1.1.0
+
+**Release Date:** May 9, 2026
+
+### What's New
+
+#### New Installers
+
+- **Mise** - Universal version manager for development tools (Node.js, Python, Ruby, etc.)
+  - Automatically integrates with Oh My Zsh shell completions
+  - Activates via `~/.zshrc` and `~/.zprofile`
+- **Zed** - Fast and modern code editor from the creators of Atom
+
+#### Removed
+
+- **Rust** installer - removed as it is no longer needed in the standard setup flow
+- **Go** installer - removed from the standard setup flow
+- **NVM** - removed in favour of Mise for Node.js version management
+- **Fractional Scaling** - removed from the configuration options
+
+### Changes
+
+- Updated all dependencies to latest versions
+- Cleaned up obsolete shell scripts — all logic now lives entirely in Rust modules
+- Fixed Oh My Zsh installation command
+
+---
+
 ## Version 1.0.0 - Initial Release
 
 **Release Date:** October 25, 2025
