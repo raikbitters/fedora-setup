@@ -37,7 +37,7 @@ sudo mv fedora-setup /usr/local/bin/
 git clone https://github.com/raikbitters/fedora-setup.git
 cd fedora-setup
 cargo build --release
-sudo cp target/release/fedora-setup /usr/local/bin/
+cp target/release/fedora-setup ~/.local/bin/
 ```
 
 Or install globally via cargo:
